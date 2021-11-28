@@ -1,10 +1,13 @@
+require('app_mention')
 // Require the Bolt package (github.com/slackapi/bolt)
 const { App } = require("@slack/bolt");
 
-const app = new App({
+export const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET
 });
+
+
 
 // All the room in the world for your code
 
@@ -94,3 +97,5 @@ app.event("app_mention", async ({ event, context, client, say }) => {
     console.error(error);
   }
 });
+
+// app.blockAction()
