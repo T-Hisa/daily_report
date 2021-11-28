@@ -2,9 +2,9 @@ const app = require('../app')
 
 app.event("app_mention", async ({ event, context, client, say }) => {
   try {
-    console.log(`event is ${event.toSource()}`);
-    console.log(`context is ${context.toSource()}`);
-    console.log(`client is ${client.toSource()}`);
+    console.log(`event is ${JSON.stringify(event)}`);
+    console.log(`context is ${JSON.stringify(context)}`);
+    console.log(`client is ${JSON.stringify(client)}`);
     await say({
       blocks: [
         {

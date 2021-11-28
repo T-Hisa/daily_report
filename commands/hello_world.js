@@ -4,8 +4,8 @@ const app = require('../app')
 // Listen for a slash command invocation
 app.command('/hello_world', async ({ ack, payload, context }) => {
   // Acknowledge the command request
+  console.log('received!!!!!!!!!!!!!!!')
   ack();
-
   try {
     const result = await app.client.views.open({
       token: context.botToken,

@@ -10,6 +10,7 @@ module.exports = app
 
 require('./actions')
 require('./events')
+require('./commands')
 
 // All the room in the world for your code
 const start_app = async () => {
