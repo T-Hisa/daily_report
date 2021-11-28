@@ -2,7 +2,7 @@ const app = require('../app')
 
 
 // Listen for a slash command invocation
-app.command('/helloworld', async ({ ack, payload, context }) => {
+app.command('/hello_world', async ({ ack, payload, context }) => {
   // Acknowledge the command request
   ack();
 
