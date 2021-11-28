@@ -1,4 +1,4 @@
-const app = require('./app')
+const app = require('../app')
 
 app.event("app_home_opened", async ({ event, client, context }) => {
   try {

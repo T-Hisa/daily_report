@@ -8,10 +8,8 @@ const app = new App({
 
 module.exports = app
 
-require('./app_mention')
-require('./app_home_opened')
-
-require('./actions/first_button')
+require('./actions')
+require('./events')
 
 // All the room in the world for your code
 const start_app = async () => {
