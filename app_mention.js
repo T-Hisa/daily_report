@@ -1,6 +1,4 @@
 const app = require('./app')
-console.log('debug')
-console.log(app)
 
 app.event("app_mention", async ({ event, context, client, say }) => {
   try {

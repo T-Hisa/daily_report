@@ -11,6 +11,8 @@ module.exports = app
 require('./app_mention')
 require('./app_home_opened')
 
+require('./actions/first_button')
+
 // All the room in the world for your code
 const start_app = async () => {
   await app.start(process.env.PORT || 3000);
