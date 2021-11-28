@@ -1,6 +1,3 @@
-require('./app_mention')
-require('./app_home_opened')
-
 // Require the Bolt package (github.com/slackapi/bolt)
 const { App } = require("@slack/bolt");
 
@@ -9,15 +6,16 @@ const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET
 });
 
+module.exports = app
 
-
+require('./app_mention')
+require('./app_home_opened')
 
 // All the room in the world for your code
-(async () => {
-  // Start your app
+const start_app = async () => {
   await app.start(process.env.PORT || 3000);
 
   console.log("⚡️ Bolt app is running!");
-})();
+}
 
-module.exports = app
+start_app()
