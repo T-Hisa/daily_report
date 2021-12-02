@@ -4,7 +4,6 @@ const app = require('../app')
 // Listen for a slash command invocation
 app.command('/hello_world', async ({ ack, payload, context }) => {
   // Acknowledge the command request
-  console.log('received!!!!!!!!!!!!!!!')
   ack();
   try {
     const result = await app.client.views.open({
@@ -15,7 +14,7 @@ app.command('/hello_world', async ({ ack, payload, context }) => {
       view: {
         type: 'modal',
         // View identifier
-        callback_id: 'view_1',
+        callback_id: 'modal1',
         title: {
           type: 'plain_text',
           text: 'Modal title'
