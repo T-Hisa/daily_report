@@ -12,47 +12,71 @@ app.command('/hello_world', async ({ ack, payload, context }) => {
       trigger_id: payload.trigger_id,
       // View payload
       view: {
-        type: 'modal',
-        // View identifier
-        callback_id: 'modal1',
-        title: {
-          type: 'plain_text',
-          text: 'Modal title'
+        "type": "modal",
+        "submit": {
+          "type": "plain_text",
+          "text": "Submit",
+          "emoji": true
         },
-        blocks: [
+        "close": {
+          "type": "plain_text",
+          "text": "Cancel",
+          "emoji": true
+        },
+        "title": {
+          "type": "plain_text",
+          "text": "Today's Actions",
+          "emoji": true
+        },
+        "blocks": [
           {
-            type: 'section',
-            text: {
-              type: 'mrkdwn',
-              text: 'Welcome to a modal with _blocks_'
+            "type": "divider"
+          },
+          {
+            "dispatch_action": true,
+            "type": "input",
+            "element": {
+              "type": "plain_text_input",
+              "action_id": "plain_text_input-action"
             },
-            accessory: {
-              type: 'button',
-              text: {
-                type: 'plain_text',
-                text: 'Click me!'
-              },
-              action_id: 'button_abc'
+            "label": {
+              "type": "plain_text",
+              "text": "Label",
+              "emoji": true
             }
           },
           {
-            type: 'input',
-            block_id: 'test_input',
-            label: {
-              type: 'plain_text',
-              text: 'What are your hopes and dreams?'
+            "dispatch_action": true,
+            "type": "input",
+            "element": {
+              "type": "plain_text_input",
+              "dispatch_action_config": {
+                "trigger_actions_on": [
+                  "on_character_entered"
+                ]
+              },
+              "action_id": "plain_text_input-action"
             },
-            element: {
-              type: 'plain_text_input',
-              action_id: 'dreamy_input',
-              multiline: true
+            "label": {
+              "type": "plain_text",
+              "text": "Label",
+              "emoji": true
+            }
+          },
+          {
+            "type": "input",
+            "element": {
+              "type": "plain_text_input",
+              "multiline": true,
+              "action_id": "plain_text_input-action"
+            },
+            "label": {
+              "type": "plain_text",
+              "text": "Label",
+              "emoji": true
             }
           }
-        ],
-        submit: {
-          type: 'plain_text',
-          text: 'Submit'
-        }
+        ]
       }
     });
     console.log(result);
