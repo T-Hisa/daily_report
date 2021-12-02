@@ -1,6 +1,7 @@
 const app = require('../app')
 
 app.event("app_mention", async ({ event, context, client, say }) => {
+  
   try {
     console.log(`event is ${JSON.stringify(event)}`);
     console.log(`context is ${JSON.stringify(context)}`);

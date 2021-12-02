@@ -11,7 +11,7 @@ module.exports = app
 require('./actions')
 require('./events')
 // require('./commands')
-app.command('/hello_world', async ({ ack, payload, context }) => {
+app.command('/helloworld', async ({ ack, payload, context }) => {
   // Acknowledge the command request
   console.log('received!!!!!!!!!!!!!!!')
   ack();
