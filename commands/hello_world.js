@@ -57,16 +57,16 @@ app.command("/hello_world", async ({ ack, payload, context }) => {
             type: "section",
             text: {
               type: "mrkdwn",
-              text: "Add more Action",
+              text: " ",
             },
             accessory: {
               type: "button",
               text: {
                 type: "plain_text",
-                text: " ",
+                text: "Add more action",
                 emoji: true,
               },
-              value: "Adding Action",
+              value: "click_me_123",
               action_id: "adding-high-action",
             },
           },
@@ -88,16 +88,16 @@ app.command("/hello_world", async ({ ack, payload, context }) => {
             type: "section",
             text: {
               type: "mrkdwn",
-              text: "Add more Action",
+              text: " ",
             },
             accessory: {
               type: "button",
               text: {
                 type: "plain_text",
-                text: " ",
+                text: "Add more action",
                 emoji: true,
               },
-              value: "Adding Action",
+              value: "click_me_234",
               action_id: "adding-low-action",
             },
           },
