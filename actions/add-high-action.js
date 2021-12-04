@@ -14,7 +14,7 @@ const findElementByActionId = (blocks, priority) => {
   );
 };
 
-let HIGH_LEVEL_ACTION_COUNT = 2;
+let HIGH_LEVEL_ACTION_COUNT = 1;
 
 const addingElementToBlocks = (blocks, priority) => {
   const addingIndex = findElementByActionId(blocks, priority);

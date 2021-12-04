@@ -27,12 +27,15 @@ const base_modal_view = {
       type: "divider",
     },
     // 優先度が高いAction
-    header_generator('High'),
-    plain_text_field_generator("high", 1),
+    header_generator("High"),
+    // plain_text_field_generator("high", 1),
     buttons_generator("high"),
     // 優先度が低いAction
-    header_generator('Low'),
-    plain_text_field_generator("low", 1),
+    {
+      type: "divider",
+    },
+    header_generator("Low"),
+    // plain_text_field_generator("low", 1),
     buttons_generator("low"),
   ],
 };
