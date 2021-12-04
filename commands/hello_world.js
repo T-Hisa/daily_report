@@ -1,8 +1,7 @@
-const app = require('../app')
-
+const app = require("../app");
 
 // Listen for a slash command invocation
-app.command('/hello_world', async ({ ack, payload, context }) => {
+app.command("/hello_world", async ({ ack, payload, context }) => {
   // Acknowledge the command request
   ack();
   try {
@@ -34,45 +33,23 @@ app.command('/hello_world', async ({ ack, payload, context }) => {
             type: "divider",
           },
           {
-            dispatch_action: true,
-            type: "input",
-            element: {
-              type: "plain_text_input",
-              action_id: "plain_text_input-action",
-            },
-            label: {
+            type: "header",
+            text: {
               type: "plain_text",
-              text: "Label",
+              text: "High Priority Actions",
               emoji: true,
             },
           },
-          {
-            dispatch_action: true,
-            type: "input",
-            block_id: 'sample_input',
-            element: {
-              type: "plain_text_input",
-              dispatch_action_config: {
-                trigger_actions_on: ["on_character_entered"],
-              },
-              action_id: "plain_text_input_action",
-            },
-            label: {
-              type: "plain_text",
-              text: "Label",
-              emoji: true,
-            },
-          },
+          // 優先度が高いAction
           {
             type: "input",
             element: {
               type: "plain_text_input",
-              multiline: true,
-              action_id: "plain_text_input-action",
+              action_id: "high_action_1",
             },
             label: {
               type: "plain_text",
-              text: "Label",
+              text: "Action 1",
               emoji: true,
             },
           },
@@ -86,7 +63,38 @@ app.command('/hello_world', async ({ ack, payload, context }) => {
               type: "button",
               text: {
                 type: "plain_text",
-                text: "Click Me",
+                text: "Adding Action List",
+                emoji: true,
+              },
+              value: "click_me_123",
+              action_id: "button-action",
+            },
+          },
+          // 優先度が低いAction
+          {
+            type: "input",
+            element: {
+              type: "plain_text_input",
+              multiline: true,
+              action_id: "low_action_1",
+            },
+            label: {
+              type: "plain_text",
+              text: "Action 1",
+              emoji: true,
+            },
+          },
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: "Add more Action",
+            },
+            accessory: {
+              type: "button",
+              text: {
+                type: "plain_text",
+                text: "Adding Action List",
                 emoji: true,
               },
               value: "click_me_123",
@@ -97,8 +105,7 @@ app.command('/hello_world', async ({ ack, payload, context }) => {
       },
     });
     console.log(result);
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error);
   }
 });
