@@ -12,7 +12,7 @@ app.command("/hello_world", async ({ ack, payload, context }) => {
       // Pass a valid trigger_id within 3 seconds of receiving it
       trigger_id: payload.trigger_id,
       // View payload
-      view: base_modal_initializer,
+      view: base_modal_initializer(),
     });
     console.log(result);
   } catch (error) {
