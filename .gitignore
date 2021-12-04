@@ -1,6 +1,11 @@
+examples
+events/app_home_opened.js
+views/modal*
+
 .config
 .data
 .env
 .node-gyp
+
 package-lock.json
 
