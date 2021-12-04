@@ -1,12 +1,21 @@
 const app = require('../app')
 
+const elements = require('../elements')
+
 app.action("adding-high-action", async ({ ack, body, context }) => {
   ack();
   console.log('clicked!!!!')
-  console.log('body is ')
-  console.log(body)
+  console.log("clicked!!!!");
+  console.log("blocks is ");
+  const blocks = body["view"]["blocks"];
+  console.log(blocks);
+  console.log("first element of blocks is");
+  console.log(blocks[0]);
+  console.log('elements are')
+  console.log(elements)
   console.log("context is ");
   console.log(context);
+  // body@['view']['blocks'] に、要素を追加する。
   try {
     const result = await app.client.chat.update({
       token: context.botToken,
