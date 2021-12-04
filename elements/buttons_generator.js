@@ -8,8 +8,8 @@ const buttons_generator = (priority) => ({
         text: "Remove Action",
         emoji: true,
       },
-      value: `removing-${priority}`,
-      action_id: `button-action`,
+      value: priority,
+      action_id: 'removing-action',
     },
     {
       type: "button",
@@ -18,8 +18,8 @@ const buttons_generator = (priority) => ({
         text: "Add Action",
         emoji: true,
       },
-      value: `adding-${priority}`,
-      action_id: `button-action`,
+      value: priority,
+      action_id: 'adding-action',
     },
   ],
 });

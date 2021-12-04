@@ -1,2 +1,2 @@
-require('./add-high-action')
+require('./adding-action')
 require('./my_modal_1')

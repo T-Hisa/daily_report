@@ -30,7 +30,7 @@ const addingElementToBlocks = (blocks, priority) => {
   }
 };
 
-app.action("button-action", async ({ ack, body, context }) => {
+app.action("adding-action", async ({ ack, body, context }) => {
   ack();
   const view = body["view"];
   console.log(body["actions"][0]["value"]);
