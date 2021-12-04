@@ -46,10 +46,11 @@ app.action("adding-high-action", async ({ ack, body, context }) => {
   // console.log("first element of blocks is");
   // console.log(blocks[0]);
   const json_stringified_view = JSON.stringify(view);
+  const json_stringified_base_view = JSON.stringify(base_modal_view);
 
-  console.log("context is ");
-  console.log(context);
-  // body@['view']['blocks'] に、要素を追加する。
+  // console.log("context is ");
+  // console.log(context);
+  // body['view']['blocks'] に、要素を追加する。
   try {
     const result = await app.client.views.update({
       token: context.botToken,
