@@ -9,7 +9,7 @@ const findElementByActionId = (blocks, priority) => {
     blocks.find(
       (block) =>
         block["accessory"] &&
-        block["accessory"]["action_id"] === `adding-${priority}-action`
+        block["accessory"]["action_id"] === `add-${priority}`
     )
   );
 };
@@ -30,10 +30,9 @@ const addingElementToBlocks = (blocks, priority) => {
   }
 };
 
-app.action("adding-high-action", async ({ ack, body, context }) => {
+app.action("add-high", async ({ ack, body, context }) => {
   ack();
   const view = body["view"];
-  // console.log("blocks is ");
   const base_blocks = base_modal_view["blocks"];
   addingElementToBlocks(base_blocks, 'high')
   // body['view']['blocks'] に、要素を追加する。

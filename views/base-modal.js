@@ -1,4 +1,4 @@
-const { button_generator, plain_text_field_generator } = require("../elements");
+const { buttons_generator, plain_text_field_generator } = require("../elements");
 
 const base_modal_view = {
   type: "modal",
@@ -32,10 +32,10 @@ const base_modal_view = {
     },
     // 優先度が高いAction
     plain_text_field_generator("high", 1),
-    button_generator("high"),
+    buttons_generator("high"),
     // 優先度が低いAction
     plain_text_field_generator("low", 1),
-    button_generator("low"),
+    buttons_generator("low"),
   ],
 };
 
