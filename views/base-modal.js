@@ -31,10 +31,10 @@ const base_modal_view = {
       },
     },
     // 優先度が高いAction
-    plain_text_field_generator("high", 0),
+    plain_text_field_generator("high", 1),
     button_generator("high"),
     // 優先度が低いAction
-    plain_text_field_generator("low", 0),
+    plain_text_field_generator("low", 1),
     button_generator("low"),
   ],
 };
