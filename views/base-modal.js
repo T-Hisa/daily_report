@@ -1,4 +1,8 @@
-const { buttons_generator, plain_text_field_generator } = require("../elements");
+const {
+  buttons_generator,
+  plain_text_field_generator,
+  header_generator,
+} = require("../elements");
 
 const base_modal_view = {
   type: "modal",
@@ -22,18 +26,12 @@ const base_modal_view = {
     {
       type: "divider",
     },
-    {
-      type: "header",
-      text: {
-        type: "plain_text",
-        text: "High Priority Actions",
-        emoji: true,
-      },
-    },
     // 優先度が高いAction
+    header_generator('High'),
     plain_text_field_generator("high", 1),
     buttons_generator("high"),
     // 優先度が低いAction
+    header_generator('Low'),
     plain_text_field_generator("low", 1),
     buttons_generator("low"),
   ],
