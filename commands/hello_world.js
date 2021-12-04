@@ -12,89 +12,89 @@ app.command('/hello_world', async ({ ack, payload, context }) => {
       trigger_id: payload.trigger_id,
       // View payload
       view: {
-        "type": "modal",
-        "submit": {
-          "type": "plain_text",
-          "text": "Submit",
-          "emoji": true
+        type: "modal",
+        callback_id: "my_modal_1",
+        submit: {
+          type: "plain_text",
+          text: "Submit",
+          emoji: true,
         },
-        "close": {
-          "type": "plain_text",
-          "text": "Cancel",
-          "emoji": true
+        close: {
+          type: "plain_text",
+          text: "Cancel",
+          emoji: true,
         },
-        "title": {
-          "type": "plain_text",
-          "text": "Today's Actions",
-          "emoji": true
+        title: {
+          type: "plain_text",
+          text: "Today's Actions",
+          emoji: true,
         },
-        "blocks": [
+        blocks: [
           {
-            "type": "divider"
+            type: "divider",
           },
           {
-            "dispatch_action": true,
-            "type": "input",
-            "element": {
-              "type": "plain_text_input",
-              "action_id": "plain_text_input-action"
+            dispatch_action: true,
+            type: "input",
+            element: {
+              type: "plain_text_input",
+              action_id: "plain_text_input-action",
             },
-            "label": {
-              "type": "plain_text",
-              "text": "Label",
-              "emoji": true
-            }
+            label: {
+              type: "plain_text",
+              text: "Label",
+              emoji: true,
+            },
           },
           {
-            "dispatch_action": true,
-            "type": "input",
-            "element": {
-              "type": "plain_text_input",
-              "dispatch_action_config": {
-                "trigger_actions_on": [
-                  "on_character_entered"
-                ]
+            dispatch_action: true,
+            type: "input",
+            block_id: 'sample_input',
+            element: {
+              type: "plain_text_input",
+              dispatch_action_config: {
+                trigger_actions_on: ["on_character_entered"],
               },
-              "action_id": "plain_text_input-action"
+              action_id: "plain_text_input_action",
             },
-            "label": {
-              "type": "plain_text",
-              "text": "Label",
-              "emoji": true
-            }
+            label: {
+              type: "plain_text",
+              text: "Label",
+              emoji: true,
+            },
           },
           {
-            "type": "input",
-            "element": {
-              "type": "plain_text_input",
-              "multiline": true,
-              "action_id": "plain_text_input-action"
+            type: "input",
+            element: {
+              type: "plain_text_input",
+              multiline: true,
+              action_id: "plain_text_input-action",
             },
-            "label": {
-              "type": "plain_text",
-              "text": "Label",
-              "emoji": true
-            }
+            label: {
+              type: "plain_text",
+              text: "Label",
+              emoji: true,
+            },
           },
           {
-            "type": "section",
-            "text": {
-              "type": "mrkdwn",
-              "text": "Add more Action"
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: "Add more Action",
             },
-            "accessory": {
-              "type": "button",
-              "text": {
-                "type": "plain_text",
-                "text": "Click Me",
-                "emoji": true
+            accessory: {
+              type: "button",
+              text: {
+                type: "plain_text",
+                text: "Click Me",
+                emoji: true,
               },
-              "value": "click_me_123",
-              "action_id": "button-action"
-            }
-          }
-        ]
-      }
+              value: "click_me_123",
+              action_id: "button-action",
+            },
+          },
+        ],
+      },
     });
     console.log(result);
   }
