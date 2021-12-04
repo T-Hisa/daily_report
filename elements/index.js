@@ -1,6 +1,7 @@
-const high_button_element = require('./high_button_element')
-const low_button_element = require('./low_button_eleement')
+const button_generator = require("./button_generator");
+const plain_text_field_generator = require("./plain_text_field_generator");
+
 module.exports = {
-  high_button_element,
-  low_button_element
-}
+  button_generator,
+  plain_text_field_generator,
+};

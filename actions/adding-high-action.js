@@ -1,7 +1,12 @@
 const app = require('../app')
 
-const elements = require('../elements')
-
+const findElementByActionId = (blocks, actionId) => {
+  // "accessory" 要素があり、かつ、その "accessory"要素の "action_id" 要素が actionId に等しい
+  // 配列の要素の Index を返す。
+  return blocks.indexOf(
+    blocks.find(block =>block['accessory'] && block['accessory']['action_id'] === actionId)
+  )
+}
 app.action("adding-high-action", async ({ ack, body, context }) => {
   ack();
   console.log('clicked!!!!')

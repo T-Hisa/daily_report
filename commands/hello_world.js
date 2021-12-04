@@ -1,7 +1,8 @@
 const app = require("../app");
+
 const {
-  high_button_element,
-  low_button_element
+  button_generator,
+  plain_text_field_generator,
 } = require("../elements");
 
 // Listen for a slash command invocation
@@ -45,34 +46,11 @@ app.command("/hello_world", async ({ ack, payload, context }) => {
             },
           },
           // 優先度が高いAction
-          {
-            type: "input",
-            element: {
-              type: "plain_text_input",
-              action_id: "high_action_1",
-            },
-            label: {
-              type: "plain_text",
-              text: "Action 1",
-              emoji: true,
-            },
-          },
-          high_button_element,
+          plain_text_field_generator("high", 0),
+          button_generator('high'),
           // 優先度が低いAction
-          {
-            type: "input",
-            element: {
-              type: "plain_text_input",
-              multiline: true,
-              action_id: "low_action_1",
-            },
-            label: {
-              type: "plain_text",
-              text: "Action 1",
-              emoji: true,
-            },
-          },
-          low_button_element
+          plain_text_field_generator("low", 0),
+          button_generator('low'),
         ],
       },
     });
