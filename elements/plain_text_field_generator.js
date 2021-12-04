@@ -7,7 +7,7 @@ const plain_text_field_generator = (priority, number) => (
     },
     label: {
       type: "plain_text",
-      text: "Action 1",
+      text: `Action ${number}`,
       emoji: true,
     },
   }

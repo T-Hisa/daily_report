@@ -8,4 +8,4 @@ views/modal*
 .node-gyp
 
 package-lock.json
-
+node_modules/
