@@ -9,7 +9,7 @@ const findElementByActionId = (blocks, priority) => {
     blocks.find(
       (block) =>
         block["elements"] &&
-        block["elements"]["action_id"] === `add-${priority}`
+        block["elements"][1]["action_id"] === `add-${priority}`
     )
   );
 };
