@@ -3,13 +3,13 @@ const { plain_text_field_generator } = require("../elements");
 const { base_modal_view } = require("../views");
 
 const findElementByActionId = (blocks, priority) => {
-  // "accessory" 要素があり、かつ、その "accessory"要素の "action_id" 要素が actionId に等しい
+  // "elements" 要素があり、かつ、その "eleements"要素の "action_id" 要素が actionId に等しい
   // 配列の要素の Index を返す。
   return blocks.indexOf(
     blocks.find(
       (block) =>
-        block["accessory"] &&
-        block["accessory"]["action_id"] === `add-${priority}`
+        block["elements"] &&
+        block["elements"]["action_id"] === `add-${priority}`
     )
   );
 };
@@ -34,6 +34,8 @@ app.action("add-high", async ({ ack, body, context }) => {
   ack();
   const view = body["view"];
   const base_blocks = base_modal_view["blocks"];
+  console.log("base_blocks are");
+  console.log(base_blocks);
   addingElementToBlocks(base_blocks, 'high')
   // body['view']['blocks'] に、要素を追加する。
   try {
