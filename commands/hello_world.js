@@ -6,6 +6,7 @@ const { button_generator, plain_text_field_generator } = require("../elements");
 app.command("/hello_world", async ({ ack, payload, context }) => {
   // Acknowledge the command request
   ack();
+  console.log('command invoked !!!')
   try {
     const result = await app.client.views.open({
       token: context.botToken,
@@ -14,7 +15,7 @@ app.command("/hello_world", async ({ ack, payload, context }) => {
       // View payload
       view: base_modal_initializer(),
     });
-    console.log(result);
+    // console.log(result);
   } catch (error) {
     console.error(error);
   }

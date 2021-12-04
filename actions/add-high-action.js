@@ -34,17 +34,14 @@ app.action("add-high", async ({ ack, body, context }) => {
   ack();
   const view = body["view"];
   const base_blocks = base_modal_view["blocks"];
-  console.log("base_blocks are");
-  console.log(base_blocks);
   addingElementToBlocks(base_blocks, 'high')
   // body['view']['blocks'] に、要素を追加する。
   try {
-    const result = await app.client.views.update({
+    await app.client.views.update({
       token: context.botToken,
       view: base_modal_view,
       view_id: view["id"],
     });
-    console.log(`result is ${result}`);
   } catch (err) {
     console.error(err);
   }
