@@ -30,9 +30,10 @@ const addingElementToBlocks = (blocks, priority) => {
   }
 };
 
-app.action("add-high", async ({ ack, body, context }) => {
+app.action("button-action", async ({ ack, body, context }) => {
   ack();
   const view = body["view"];
+  console.log(body["actions"][0]["value"]);
   const base_blocks = base_modal_view["blocks"];
   addingElementToBlocks(base_blocks, 'high')
   // body['view']['blocks'] に、要素を追加する。
