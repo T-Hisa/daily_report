@@ -39,4 +39,9 @@ const base_modal_view = {
   ],
 };
 
-module.exports = base_modal_view
+const base_modal_initializer = () => base_modal_view
+
+module.exports = {
+  base_modal_view,
+  base_modal_initializer
+}
