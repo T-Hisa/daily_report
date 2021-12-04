@@ -1,9 +1,10 @@
 const app = require("../app");
 const { plain_text_field_generator } = require("../elements");
 const { base_modal_view } = require("../views");
+let { HIGH_LEVEL_ACTION_ELEMENT_COUNT } = require("./element_count");
 
 const MAX_ELEMENT_COUNT = 5
-let HIGH_LEVEL_ACTION_ELEMENT_COUNT = 1;
+
 
 const findElementByActionId = (blocks, priority) => {
   // "elements" 要素があり、かつ、その "eleements"要素の "action_id" 要素が actionId に等しい
