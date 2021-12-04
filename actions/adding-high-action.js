@@ -1,5 +1,6 @@
 const app = require("../app");
 const { plain_text_field_generator } = require("../elements");
+const { base_modal_view } = require("../views");
 
 const findElementByActionId = (blocks, priority) => {
   // "accessory" 要素があり、かつ、その "accessory"要素の "action_id" 要素が actionId に等しい
@@ -31,15 +32,15 @@ const addingElementToBlocks = (blocks, priority) => {
 
 app.action("adding-high-action", async ({ ack, body, context }) => {
   ack();
-  const view = body['view']
+  const view = body["view"];
   // console.log("blocks is ");
   const blocks = view["blocks"];
   // console.log(blocks);
-  console.log('before views blocks count')
-  console.log(view['blocks'].length);
-  addingElementToBlocks(blocks, 'high')
+  console.log("before views blocks count");
+  console.log(view["blocks"].length);
+  // addingElementToBlocks(blocks, 'high')
   console.log("after views blocks count");
-  console.log(view['blocks'].length);
+  console.log(view["blocks"].length);
   console.log("view is ");
   console.log(view);
   // console.log("first element of blocks is");
