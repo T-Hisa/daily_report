@@ -1,0 +1,6 @@
+.config
+.data
+.env
+.node-gyp
+package-lock.json
+

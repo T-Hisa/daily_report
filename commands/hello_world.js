@@ -75,6 +75,23 @@ app.command('/hello_world', async ({ ack, payload, context }) => {
               "text": "Label",
               "emoji": true
             }
+          },
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": "Add more Action"
+            },
+            "accessory": {
+              "type": "button",
+              "text": {
+                "type": "plain_text",
+                "text": "Click Me",
+                "emoji": true
+              },
+              "value": "click_me_123",
+              "action_id": "button-action"
+            }
           }
         ]
       }
