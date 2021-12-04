@@ -1,4 +1,8 @@
 const app = require("../app");
+const {
+  high_button_element,
+  low_button_element
+} = require("../elements");
 
 // Listen for a slash command invocation
 app.command("/hello_world", async ({ ack, payload, context }) => {
@@ -53,23 +57,7 @@ app.command("/hello_world", async ({ ack, payload, context }) => {
               emoji: true,
             },
           },
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text: " ",
-            },
-            accessory: {
-              type: "button",
-              text: {
-                type: "plain_text",
-                text: "Add more action",
-                emoji: true,
-              },
-              value: "click_me_123",
-              action_id: "adding-high-action",
-            },
-          },
+          high_button_element,
           // 優先度が低いAction
           {
             type: "input",
@@ -84,23 +72,7 @@ app.command("/hello_world", async ({ ack, payload, context }) => {
               emoji: true,
             },
           },
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text: " ",
-            },
-            accessory: {
-              type: "button",
-              text: {
-                type: "plain_text",
-                text: "Add more action",
-                emoji: true,
-              },
-              value: "click_me_234",
-              action_id: "adding-low-action",
-            },
-          },
+          low_button_element
         ],
       },
     });

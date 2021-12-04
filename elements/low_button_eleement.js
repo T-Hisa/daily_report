@@ -1,4 +1,4 @@
-const high_button_element = {
+const low_button_element = {
   type: "section",
   text: {
     type: "mrkdwn",
@@ -11,9 +11,9 @@ const high_button_element = {
       text: "Add more action",
       emoji: true,
     },
-    value: "click_me_123",
-    action_id: "adding-high-action",
+    value: "click_me_234",
+    action_id: "adding-low-action",
   },
 };
 
-module.exports = high_button_element;
+module.exports = low_button_element
