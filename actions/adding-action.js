@@ -33,12 +33,12 @@ app.action("adding-action", async ({ ack, body, context }) => {
   // body['view']['blocks'] に、要素を追加する。
   if (priority === "high") {
     element_key = "HIGH_LEVEL_ACTION_ELEMENT_COUNT";
-    if (element_count[element_key] < MAX_ELEMENT_COUNT) {
+    if (element_count[element_key] <= MAX_ELEMENT_COUNT) {
       addingElementToBlocks(base_blocks, priority, element_key);
     }
   } else if (priority === "low") {
     element_key = "LOW_LEVEL_ACTION_ELEMENT_COUNT";
-    if (element_count[element_key] < MAX_ELEMENT_COUNT) {
+    if (element_count[element_key] <= MAX_ELEMENT_COUNT) {
       addingElementToBlocks(base_blocks, priority, element_key);
     }
   } else {
