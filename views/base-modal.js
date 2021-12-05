@@ -6,7 +6,7 @@ const {
 
 const base_modal_view = {
   type: "modal",
-  callback_id: "my_modal_1",
+  callback_id: "submit_todays_todo",
   submit: {
     type: "plain_text",
     text: "Submit",

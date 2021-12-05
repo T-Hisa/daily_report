@@ -2,7 +2,7 @@ const app = require("../app");
 const { plain_text_field_generator } = require("../elements");
 const { base_modal_view } = require("../views");
 const { findElementByValue } = require("./utils");
-const element_count = require("./element_count");
+const ELEMENT_COUNT = require("./ELEMENT_COUNT");
 
 const MAX_ELEMENT_COUNT = 5;
 
@@ -12,10 +12,7 @@ const addingElementToBlocks = (blocks, priority, key) => {
     blocks.splice(
       addingIndex,
       0,
-      plain_text_field_generator(
-        priority,
-        element_count[key]++
-      )
+      plain_text_field_generator(priority, ELEMENT_COUNT[key]++)
     );
   } else {
     console.error("not find element !");
@@ -33,12 +30,12 @@ app.action("adding-action", async ({ ack, body, context }) => {
   // body['view']['blocks'] に、要素を追加する。
   if (priority === "high") {
     element_key = "HIGH_LEVEL_ACTION_ELEMENT_COUNT";
-    if (element_count[element_key] <= MAX_ELEMENT_COUNT) {
+    if (ELEMENT_COUNT[element_key] <= MAX_ELEMENT_COUNT) {
       addingElementToBlocks(base_blocks, priority, element_key);
     }
   } else if (priority === "low") {
     element_key = "LOW_LEVEL_ACTION_ELEMENT_COUNT";
-    if (element_count[element_key] <= MAX_ELEMENT_COUNT) {
+    if (ELEMENT_COUNT[element_key] <= MAX_ELEMENT_COUNT) {
       addingElementToBlocks(base_blocks, priority, element_key);
     }
   } else {

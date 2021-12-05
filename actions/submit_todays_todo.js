@@ -3,7 +3,7 @@ const app = require('../app')
 app.view("submit_todays_todo", ({ ack, body, view, context }) => {
   // Acknowledge the view_submission event
   ack();
-
+  console.log('submit received!!')
   // Do whatever you want with the input data - here we're saving it to a DB then sending the user a verifcation of their submission
 
   // Assume there's an input block with `test_input` as the block_id and `dreamy_input` as the action_id

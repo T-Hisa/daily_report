@@ -1,6 +1,7 @@
-const plain_text_field_generator = (priority, number) => (
+const plain_text_input_generator = (priority, number) => (
   {
     type: "input",
+    block_id: `${priority}_input_${number}`,
     element: {
       type: "plain_text_input",
       action_id: `${priority}_action_${number}`,
@@ -13,4 +14,4 @@ const plain_text_field_generator = (priority, number) => (
   }
 )
 
-module.exports = plain_text_field_generator
+module.exports = plain_text_input_generator;
