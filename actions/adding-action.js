@@ -6,13 +6,16 @@ const element_count = require("./element_count");
 
 const MAX_ELEMENT_COUNT = 5;
 
-const addingElementToBlocks = (blocks, priority) => {
+const addingElementToBlocks = (blocks, priority, key) => {
   const addingIndex = findElementByValue(blocks, priority);
   if (addingIndex > -1) {
     blocks.splice(
       addingIndex,
       0,
-      plain_text_field_generator(priority, element_count['HIGH_LEVEL_ACTION_ELEMENT_COUNT']++)
+      plain_text_field_generator(
+        priority,
+        element_count[key]++
+      )
     );
   } else {
     console.error("not find element !");
@@ -23,12 +26,23 @@ const addingElementToBlocks = (blocks, priority) => {
 app.action("adding-action", async ({ ack, body, context }) => {
   ack();
   const view = body["view"];
+  const priority = body["actions"][0]["value"];
+  const base_blocks = base_modal_view["blocks"];
+  let element_key = "";
 
-  if (element_count["HIGH_LEVEL_ACTION_ELEMENT_COUNT"] < MAX_ELEMENT_COUNT) {
-    const value = body["actions"][0]["value"];
-    const base_blocks = base_modal_view["blocks"];
-    // body['view']['blocks'] に、要素を追加する。
-    addingElementToBlocks(base_blocks, value);
+  // body['view']['blocks'] に、要素を追加する。
+  if (priority === "high") {
+    element_key = "HIGH_LEVEL_ACTION_ELEMENT_COUNT";
+    if (element_count[element_key] > MIN_ELEMENT_COUNT) {
+      addingElementToBlocks(base_blocks, priority, element_key);
+    }
+  } else if (priority === "low") {
+    element_key = "LOW_LEVEL_ACTION_ELEMENT_COUNT";
+    if (element_count[element_key] > MIN_ELEMENT_COUNT) {
+      addingElementToBlocks(base_blocks, priority, element_key);
+    }
+  } else {
+    console.error(`Unexpected priority value ${value}`);
   }
 
   try {
