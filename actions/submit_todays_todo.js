@@ -12,11 +12,23 @@ app.view("submit_todays_todo", ({ ack, body, view, context }) => {
   // const user = body["user"]["id"];
 
   // You'll probably want to store these values somewhere
+  console.log("------------------------------------");
   console.log("context");
   console.log(context);
-  console.log('view');
+  console.log("------------------------------------");
+  console.log("view");
   console.log(view);
-  console.log('body');
+  console.log("------------------------------------");
+  console.log("body");
   console.log(body);
   console.log("------------------------------------");
+  console.log("user");
+  console.log(body["user"]);
+  console.log("------------------------------------");
+  console.log("view['state']");
+  console.log(view["state"]);
+
+  console.log("------------------------------------");
+  console.log("view['state']['values']");
+  console.log(view["state"]["values"]);
 });

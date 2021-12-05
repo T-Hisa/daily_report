@@ -1,5 +1,5 @@
 const app = require("../app");
-const { plain_text_field_generator } = require("../elements");
+const { plain_text_input_generator } = require("../elements");
 const { base_modal_view } = require("../views");
 const { findElementByValue } = require("./utils");
 const ELEMENT_COUNT = require("./ELEMENT_COUNT");
@@ -12,7 +12,7 @@ const addingElementToBlocks = (blocks, priority, key) => {
     blocks.splice(
       addingIndex,
       0,
-      plain_text_field_generator(priority, ELEMENT_COUNT[key]++)
+      plain_text_input_generator(priority, ELEMENT_COUNT[key]++)
     );
   } else {
     console.error("not find element !");
