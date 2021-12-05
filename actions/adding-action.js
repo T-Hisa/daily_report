@@ -22,13 +22,14 @@ const addingElementToBlocks = (blocks, priority) => {
 
 app.action("adding-action", async ({ ack, body, context }) => {
   ack();
-  const view = body["view"];
-  console.log(body["actions"][0]["value"]);
-  const base_blocks = base_modal_view["blocks"];
+
   if (element_count["HIGH_LEVEL_ACTION_ELEMENT_COUNT"] < MAX_ELEMENT_COUNT) {
-    addingElementToBlocks(base_blocks, "high");
+    const value = body["actions"][0]["value"];
+    const base_blocks = base_modal_view["blocks"];
+    // body['view']['blocks'] に、要素を追加する。
+    addingElementToBlocks(base_blocks, value);
   }
-  // body['view']['blocks'] に、要素を追加する。
+
   try {
     await app.client.views.update({
       token: context.botToken,
