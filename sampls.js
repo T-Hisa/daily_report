@@ -1,8 +1,17 @@
 const sample = {
-  a: 'A',
-  b: 'B'
+  a: 0,
+  b: 0
 }
-console.log('before stringify')
-console.log(sample)
-console.log('after stringify')
-console.log(JSON.stringify(sample))
+
+console.log(sample['a']++)
+console.log(sample['a']++)
+console.log(sample['a']++)
+console.log(sample['a']--)
+console.log(sample['a']--)
+console.log(sample['a']--)
+console.log(sample['a']--)
+console.log(sample['a']--)
+console.log(sample['a']++)
+console.log(sample['a']++)
+console.log(sample['a']++)
+console.log(sample['a'])
