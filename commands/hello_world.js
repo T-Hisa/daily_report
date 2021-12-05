@@ -6,6 +6,9 @@ app.command("/hello_world", async ({ ack, payload, context }) => {
   // Acknowledge the command request
   ack();
   console.log('command invoked !!!')
+  console.log('payload is')
+  console.log(payload)
+  const channel_id = payload.channel_id
   try {
     await app.client.views.open({
       token: context.botToken,

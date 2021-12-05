@@ -1,4 +1,4 @@
-const buttons_generator = (priority) => ({
+const buttons_generator = (channel_id) => ({
   type: "actions",
   elements: [
     {
@@ -8,8 +8,8 @@ const buttons_generator = (priority) => ({
         text: "Remove Action",
         emoji: true,
       },
-      value: priority,
-      action_id: 'removing-action',
+      value: channel_id,
+      action_id: "removing-action",
     },
     {
       type: "button",
@@ -18,8 +18,8 @@ const buttons_generator = (priority) => ({
         text: "Add Action",
         emoji: true,
       },
-      value: priority,
-      action_id: 'adding-action',
+      value: channel_id,
+      action_id: "adding-action",
     },
   ],
 });

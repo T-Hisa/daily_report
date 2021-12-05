@@ -1,13 +1,13 @@
 const app = require("../app");
 const { plain_text_input_generator } = require("../elements");
 const { base_modal_view } = require("../views");
-const { findElementByValue } = require("./utils");
+const { findElementByActionId } = require("./utils");
 const ELEMENT_COUNT = require("./ELEMENT_COUNT");
 
 const MAX_ELEMENT_COUNT = 5;
 
 const addingElementToBlocks = (blocks, priority, key) => {
-  const addingIndex = findElementByValue(blocks, priority);
+  const addingIndex = findElementByActionId(blocks, 'adding');
   if (addingIndex > -1) {
     blocks.splice(
       addingIndex,

@@ -3,7 +3,7 @@ const {
   header_generator,
 } = require("../elements");
 
-const base_modal_view = {
+const base_modal_view = (channel_id) => ({
   type: "modal",
   callback_id: "submit_todays_todo",
   submit: {
@@ -27,14 +27,14 @@ const base_modal_view = {
     },
     // 優先度が高いAction
     header_generator("High"),
-    buttons_generator("high"),
+    buttons_generator(channel_id),
     // 優先度が低いAction
     {
       type: "divider",
     },
     header_generator("Low"),
-    buttons_generator("low"),
+    buttons_generator(channel_id),
   ],
-};
+});
 
 module.exports = base_modal_view;
