@@ -16,6 +16,7 @@ const removingElementFromBlocks = (blocks, priority) => {
 
 app.action("removing-action", async ({ ack, body, context }) => {
   ack();
+  const view = body["view"];
 
   if (element_count["HIGH_LEVEL_ACTION_ELEMENT_COUNT"] > MIN_ELEMENT_COUNT) {
     const value = body["actions"][0]["value"];
