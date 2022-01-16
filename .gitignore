@@ -4,8 +4,12 @@ views/modal*
 
 .config
 .data
-.env
+*env*
 .node-gyp
 
 package-lock.json
+yarn.lock
 node_modules/
+
+*sample*
+*serverless*
